@@ -1,0 +1,22 @@
+.nav-pills{
+ li{
+  border-radius: 0.375rem!important;
+   a{
+    margin-right: 5rem;
+   }
+ }
+}
+
+.nav-pills{
+  ul{
+    li{
+      
+    }
+  }
+}
+
+.nav-pills .nav-link.active{
+  --tw-text-opacity: 1!important;
+    color: rgba(41,37,36,var(--tw-text-opacity))!important;
+  background-color: rgba(214,211,209)!important;
+}
