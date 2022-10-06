@@ -1,30 +1,39 @@
 
 
-<p>
+<!-- <p>
   You should use <code>class="nav-pills"</code> if you need pills and the <code>[orientation]</code> input
   to change nav orientation
-</p>
+</p> -->
 
-<div class="d-flex">
+<div class="d-flex font-sm">
   <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
     <li ngbNavItem="top">
       <a ngbNavLink>Top</a>
       <ng-template ngbNavContent>
         <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Location Code Prefix</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <h5>Location Configuration</h5>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="locationCodePrefix">Location Code Prefix</label>
+              <input type="text" class="form-control" id="locationCodePrefix">
+            </div>
+  
+            <div class="form-group col-md-6">
+              <label for="locationCodePostfix">Location Code Postfix</label>
+              <input type="text" class="form-control" id="locationCodePostfix">
+            </div>
+  
+            <div class="form-group col-md-6">
+              <label for="locationCodePostfix">Last Location Code</label>
+              <input type="text" class="form-control" id="locationCodePostfix">
+            </div>
+
+            <div class="col-md-6 align-self-center">
+              <label class=""> Next Code: "L-5-C" </label>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+
+          <button type="submit" class="btn btn-sm mt-2 btn-secondary">Save</button>
         </form>
       </ng-template>
     </li>
