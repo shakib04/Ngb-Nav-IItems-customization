@@ -1,20 +1,20 @@
-<form>
+<form (ngSubmit)="save()" [formGroup]="editForm">
   <h5>Location Configuration</h5>
   <div class="row">
     <div class="form-group col-md-6">
       <label for="locationCodePrefix">Location Code Prefix</label>
-      <input type="text" class="form-control" id="locationCodePrefix">
+      <input type="text" class="form-control" formControlName="locationCodePrefix" id="locationCodePrefix">
     </div>
 
     <div class="form-group col-md-6">
       <label for="locationCodePostfix">Location Code Postfix</label>
-      <input type="text" class="form-control" id="locationCodePostfix">
+      <input type="text" class="form-control" formControlName="locationCodePostfix" id="locationCodePostfix">
     </div>
 
-    <div class="form-group col-md-6">
-      <label for="locationCodePostfix">Last Location Code</label>
-      <input type="text" class="form-control" id="locationCodePostfix">
-    </div>
+    <!-- <div class="form-group col-md-6">
+      <label for="lastLocationId">Last Location ID</label>
+      <input type="text" class="form-control" fonrmCotrolName="lastLocationId" id="lastLocationId">
+    </div> -->
 
     <div class="col-md-6 align-self-center">
       <label class=""> Next Code: "L-5-C" </label>
