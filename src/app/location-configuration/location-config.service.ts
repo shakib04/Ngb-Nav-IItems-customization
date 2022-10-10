@@ -13,7 +13,7 @@ export class LocationConfigService {
     }),
   };
 
-  public resourceUrl = 'http://localhost:8080' + 'api/config';
+  public resourceUrl = 'http://localhost:8080' + 'api/configs';
 
   constructor(protected http: HttpClient) {}
 
