@@ -1,4 +1,3 @@
-import { error } from '@angular/compiler-cli/src/transformers/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ILocationConfig, LocationConfig } from './location-config';
