@@ -31,8 +31,8 @@ export class LocationConfigurationComponent implements OnInit {
   loadConfigData():void{
     this.locationConfigService.getLocationConfig().subscribe(res => {
       this.locationConfig = res.body!;
-      
-      this.editForm.get(['locationCodePrefixId'])!.setValue(this.locationConfig.locationCodePrefix);
+      console.log(res.body!)
+      this.editForm.get(['locationCodePrefix'])!.setValue(this.locationConfig.locationCodePrefix);
       this.editForm.get(['locationCodePostfix'])!.setValue(this.locationConfig.locationCodePostfix);
     })
   }

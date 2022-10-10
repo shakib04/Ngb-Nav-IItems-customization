@@ -27,8 +27,19 @@ export class LocationConfigService {
     });
   }
 
-  saveLocationConfig(locationConfig: ILocationConfig):Observable<HttpResponse<ILocationConfig>>{
-    return this.http.post<ILocationConfig>(this.resourceUrl + "/location", locationConfig, {observe: 'response'});
+  saveLocationConfig(
+    locationConfig: ILocationConfig
+  ): Observable<HttpResponse<ILocationConfig>> {
+    return this.http.post<ILocationConfig>(
+      this.resourceUrl + '/location',
+      locationConfig,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Basic ' + btoa('admin:admin'),
+        },
+        observe: 'response',
+      }
+    );
   }
-
 }
