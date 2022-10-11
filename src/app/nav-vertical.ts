@@ -6,5 +6,5 @@ import {Component} from '@angular/core';
   styleUrls: ['./nav-vertical.scss']
 })
 export class NgbdNavVertical {
-  active = 'top';
+  active = 'location';
 }

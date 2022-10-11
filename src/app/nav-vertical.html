@@ -6,9 +6,9 @@
 </p> -->
 
 <div class="d-flex font-sm">
-  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
-    <li ngbNavItem="top">
-      <a ngbNavLink>Top</a>
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="col-md-2 nav-pills" orientation="vertical">
+    <li ngbNavItem="location">
+      <a ngbNavLink>Locations</a>
       <ng-template ngbNavContent>
         <app-location-configuration></app-location-configuration>
       </ng-template>
@@ -16,7 +16,7 @@
     <li ngbNavItem="middle">
       <a ngbNavLink>Middle</a>
       <ng-template ngbNavContent>
-          
+          middle
       </ng-template>
     </li>
     <li ngbNavItem="bottom">
@@ -33,7 +33,7 @@
     </li>
   </ul>
 
-  <div [ngbNavOutlet]="nav" class="ms-4"></div>
+  <div [ngbNavOutlet]="nav" class="ms-4 col-md-9"></div>
 </div>
 
 <pre>Active: {{ active }}</pre>
