@@ -7,13 +7,15 @@ import { LocationConfigurationComponent } from './location-configuration/locatio
 import { NgbdNavVertical } from './nav-vertical';
 import { LocationConfigService } from './location-configuration/location-config.service';
 import { HttpClientModule } from '@angular/common/http';
+import { OrganizationConfigurationComponent } from './organization-configuration/organization-configuration.component';
+import { OrganizationConfigurationService } from './organization-configuration/organization-configuration.service';
 
 @NgModule({
   imports: [BrowserModule, NgbModule, ReactiveFormsModule, HttpClientModule],
-  declarations: [NgbdNavVertical, LocationConfigurationComponent],
+  declarations: [NgbdNavVertical, LocationConfigurationComponent, OrganizationConfigurationComponent],
   exports: [NgbdNavVertical],
   bootstrap: [NgbdNavVertical],
-  providers: [LocationConfigService]
+  providers: [LocationConfigService, OrganizationConfigurationService]
 })
 export class NgbdNavVerticalModule {
 }
