@@ -1,15 +1,137 @@
-<div>
-  <label for="formFileMultiple" class="form-label">Upload images</label>
-  <input
-    (change)="onChange($event)"
-    class="form-control-file"
-    type="file"
-    id="formFileMultiple"
-    multiple=""
-    accept="image/"
-    style="height: 40px" />
+<div class="d-flex font-sm min-height-85vh" [formGroup]="editForm">
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="col-md-2 nav-pills" orientation="vertical">
+  <li ngbNavItem="basic">
+    <a ngbNavLink>Basic</a>
+    <ng-template ngbNavContent>
+      1. organization name, 2. slogan 3. domainName 4. contact Number 5. logo
 
-  <button type="button" class="btn btn-primary" (click)="onSubmit()">
-    Upload
-  </button>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="form-label">Organization Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" formControlName="name"/>
+        </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Organization Slogan</label>
+        <input type="text" class="form-control" name="slogan" id="field_slogan" formControlName="slogan"/>
+      </div>
+    </div>
+
+
+    <div class="row">
+    <div class="col-md-6">
+      <label class="form-label">Domain Name</label><input type="text" class="form-control" name="domainName" id="field_domainName"
+      formControlName="domainName"/>
+    </div>
+
+  <div class="col-md-6">
+    <label class="form-label">Contact Number</label>
+    <input type="text" class="form-control" name="contactNumber" id="field_contactNumber" formControlName="contactNumber"/>
+  </div>
 </div>
+
+<div class="row mt-2 justify-content-between">
+<div class="col-md-6 align-self-center">
+<label for="formFileMultiple" class="form-label">Upload LOGO</label>
+<input
+  (change)="onChange($event, 'LOGO')"
+  class="form-control"
+  type="file"
+  id="formFileMultiple"
+  accept="image/" />
+</div>
+
+<div class="col-md-1"></div>
+<div class="col-md-4 border">
+  <img src="https://cdn-icons-png.flaticon.com/512/8685/8685777.png" width="250"/>
+</div>
+</div>
+
+    </ng-template>
+  </li>
+  <li ngbNavItem="email">
+  <a ngbNavLink>Email</a>
+  <ng-template ngbNavContent>
+    1. organization Email Address, 2. Hr Email Address 3. No Reply Email Address 
+  </ng-template>
+</li>
+
+
+<li ngbNavItem="finance">
+<a ngbNavLink>Finance</a>
+<ng-template ngbNavContent>
+  1. finance manager pin, 2. financ manager signature
+</ng-template>
+</li>
+
+<li ngbNavItem="social">
+<a ngbNavLink>Social</a>
+<ng-template ngbNavContent>
+  1. linkedin, 2. twitter 3. facebook 4.youtube 5. instagram 6. whatapp 
+</ng-template>
+</li>
+
+  <li ngbNavItem="middle">
+    <a ngbNavLink>Middle</a>
+    <ng-template ngbNavContent>
+    <div class="row mb-2">
+  
+  
+  </div>
+  <div class="row">
+  
+    <div class="col-md-6 align-self-center">
+    <label for="formFileMultiple" class="form-label">Upload Finance Manager Signature</label>
+    <input
+      (change)="onChange($event, 'FINANCEMANAGERSIGNATURE')"
+      class="form-control"
+      type="file"
+      id="formFileMultiple"
+      accept="image/" />
+    </div>
+  
+    
+    <div class="col-md-1"></div>
+    <div class="col-md-4 border">
+    <img src="https://cdn-icons-png.flaticon.com/512/8685/8685777.png" width="250"/>
+  </div>
+  
+  </div>
+
+  
+    </ng-template>
+  </li>
+  <li ngbNavItem="bottom">
+    <a ngbNavLink>Bottom</a>
+    <ng-template ngbNavContent>
+      <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
+        Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
+        Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna,
+        egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec
+        tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et
+        magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget
+        neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
+    </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="ms-4 col-md-9"></div>
+</div>
+
+
+<div class="row mt-3">
+<div class="col-md-2"></div>
+<div class="col-md-3">
+<button type="button" class="btn btn-primary" (click)="onSubmit()">
+Save
+</button>
+</div>
+</div>
+
+
+
+<pre>Active: {{ active }}</pre>
+
+
+
+

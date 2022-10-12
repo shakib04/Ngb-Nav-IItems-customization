@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { OrganizationConfigurationService } from './organization-configuration.service';
+import { OrganizationFileType } from './organization-file-type.enum';
 
 @Component({
   selector: 'app-organization-configuration',
@@ -9,8 +10,10 @@ import { OrganizationConfigurationService } from './organization-configuration.s
 })
 export class OrganizationConfigurationComponent implements OnInit {
   
+  active = 'middle';
 
   selectedFiles:File[] = [];
+  selectedFileTypes: OrganizationFileType[] = []
 
   editForm = this.fb.group({
     id: [],
@@ -41,8 +44,9 @@ export class OrganizationConfigurationComponent implements OnInit {
     console.log('ee');
   }
 
-  onChange(event: any): void {
-    this.selectedFiles = event.target.files;
+  onChange(event: any, organizationFileType: string): void {
+    this.selectedFiles.push(event.target.files[0])
+    this.selectedFileTypes.push(OrganizationFileType[organizationFileType])
 
     const image: any = event.target.files[0];
     //this.size = image.size;
@@ -65,7 +69,7 @@ export class OrganizationConfigurationComponent implements OnInit {
     //this.fileValidationMessage = '';
     if (this.selectedFiles.length > 0) {
       alert('Uploading Id Card');
-      this.organizationConfiguration.create(this.selectedFiles).subscribe(() => {
+      this.organizationConfiguration.create(this.selectedFiles, this.selectedFileTypes).subscribe(() => {
         alert('saved');
       });
     } else {
