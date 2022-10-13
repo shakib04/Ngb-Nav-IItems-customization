@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { OrganizationConfigurationService } from './organization-configuration.service';
 import { OrganizationFileType } from './organization-file-type.enum';
+import { IOrganization, Organization } from './organization-model';
 
 @Component({
   selector: 'app-organization-configuration',
@@ -42,6 +43,32 @@ export class OrganizationConfigurationComponent implements OnInit {
 
   ngOnInit() {
     console.log('ee');
+  }
+
+  private createFromForm(): IOrganization {
+    return {
+      ...new Organization(),
+      id: this.editForm.get(['id'])!.value,
+      name: this.editForm.get(['name'])!.value,
+      slogan: this.editForm.get(['slogan'])!.value,
+      domainName: this.editForm.get(['domainName'])!.value,
+      emailAddress: this.editForm.get(['emailAddress'])!.value,
+      hrEmailAddress: this.editForm.get(['hrEmailAddress'])!.value,
+      noReplyEmailAddress: this.editForm.get(['noReplyEmailAddress'])!.value,
+      contactNumber: this.editForm.get(['contactNumber'])!.value,
+      financeManagerPIN: this.editForm.get(['financeManagerPIN'])!.value,
+      financeManagerSignature: this.editForm.get(['financeManagerSignature'])!.value,
+      svgLogo: this.editForm.get(['svgLogo'])!.value,
+      documentLetterHead: this.editForm.get(['documentLetterHead'])!.value,
+      hasOrganizationStamp: this.editForm.get(['hasOrganizationStamp'])!.value,
+      organizationStamp: this.editForm.get(['organizationStamp'])!.value,
+      linkedin: this.editForm.get(['linkedin'])!.value,
+      twitter: this.editForm.get(['twitter'])!.value,
+      facebook: this.editForm.get(['facebook'])!.value,
+      youtube: this.editForm.get(['youtube'])!.value,
+      instagram: this.editForm.get(['instagram'])!.value,
+      whatsapp: this.editForm.get(['whatsapp'])!.value,
+    };
   }
 
   onChange(event: any, organizationFileType: string): void {
